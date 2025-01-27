@@ -1,14 +1,10 @@
+import Buttons from "@/app/buttons"
 import Button from "@/components/ui/button"
-import {
-  LoginLink,
-  LogoutLink,
-  RegisterLink,
-} from "@kinde-oss/kinde-auth-nextjs/components"
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 
 export default async function RootPage() {
-  const { isAuthenticated } = getKindeServerSession()
-  const isUserAuthenticated = await isAuthenticated()
+  const { isAuthenticated: getIsAuthenticated } = getKindeServerSession()
+  const isAuthenticated = await getIsAuthenticated()
 
   return (
     <div>
@@ -17,11 +13,9 @@ export default async function RootPage() {
       <Button variant="secondary">Click me</Button>
       <Button variant="ghost">Click me</Button>
 
-      <LoginLink>Sign in</LoginLink>
-      <RegisterLink>Sign up</RegisterLink>
-      <LogoutLink>Sign out</LogoutLink>
+      <Buttons isAuthenticated={isAuthenticated} />
 
-      {isUserAuthenticated ? (
+      {isAuthenticated ? (
         <p>User is authenticated</p>
       ) : (
         <p>User is not authenticated</p>
