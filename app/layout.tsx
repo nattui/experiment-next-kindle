@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import type { PropsWithChildren } from "react"
+import AuthProvider from "@/app/auth-provider"
 import "@/styles/global.css"
 import { Geist, Geist_Mono } from "next/font/google"
 
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  description: "Boilerplate Components",
-  title: "Boilerplate Components",
+  description: "Experiment Next Kindle",
+  title: "Experiment Next Kindle",
 }
 
 export const viewport: Viewport = {
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   )
