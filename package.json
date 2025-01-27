@@ -1,24 +1,41 @@
 {
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
+    "check:format": "prettier --check .",
+    "check:format:fix": "prettier --write .",
+    "check:lint": "next lint",
+    "check:lint:fix": "next lint --fix",
+    "check:type": "tsc --noEmit",
+    "dev": "next dev --port 3000 --turbopack",
     "start": "next start",
-    "lint": "next lint"
+    "update": "pnpx npm-check-updates -u"
   },
   "dependencies": {
-    "next": "15.1.6",
+    "@phosphor-icons/react": "^2.1.7",
+    "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
+    "@nattui/tailwind-tokenless": "0.0.0-alpha.10",
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^20.17.16",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "eslint": "^9.19.0",
-    "eslint-config-next": "15.1.6",
+    "eslint-config-next": "^15.1.6",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-perfectionist": "^4.7.0",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17",
+    "prettier": "^3.4.2",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-packagejson": "^2.5.8",
+    "prettier-plugin-sort-json": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwind": "^4.0.0",
     "typescript": "^5.7.3"
   }
 }
