@@ -1,4 +1,6 @@
+
 {
+  "tailwindCSS.rootFontSize": 10,
   "peacock.color": "#f9e64f",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#fbed80",
